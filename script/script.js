@@ -1,20 +1,23 @@
 var options = {
-    series: [{
+  series: [{
     name: 'PRODUCT A',
-    data: [44, 55, 41, 67, 22, 43, 21, 49]
+    data: [1, 5, 5, 4, 3]
   }, {
     name: 'PRODUCT B',
-    data: [13, 23, 20, 8, 13, 27, 33, 12]
-  }, {
-    name: 'PRODUCT C',
-    data: [11, 17, 15, 15, 21, 14, 15, 13]
+
+    data: [4, 6, 3, 4, 6]
   }],
-    chart: {
+  chart: {
     type: 'bar',
-    height: 350,
-    stacked: true,
-    stackType: '100%'
+    height: 250,
+    stacked: false,
   },
+  plotOptions: {
+    bar: {
+      horizontal: true
+    }
+  },
+
   responsive: [{
     breakpoint: 480,
     options: {
@@ -26,19 +29,42 @@ var options = {
     }
   }],
   xaxis: {
-    categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2',
-      '2012 Q3', '2012 Q4'
-    ],
+    categories: ["Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие"],
   },
-  fill: {
-    opacity: 1
+  grid: {
+    show: true,
+    borderColor: '#90A4AE',
+    strokeDashArray: 4,
+    position: 'back',
+    xaxis: {
+      lines: {
+        show: true
+      }
+    },
+    yaxis: {
+      lines: {
+        show: true
+      }
+    },
   },
-  legend: {
-    position: 'right',
-    offsetX: 0,
-    offsetY: 50
+  dataLabels: {
+    enabled: false,
   },
-  };
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
+  yaxis: {
+    show: true,
+    min: 0,
+    max: 10,
+    decimalsInFloat: undefined,
+  },
+
+  colors: ['#fb4143', '#f9c654'],
+
+  legend: {
+    show: false,
+  },
+};
+
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
