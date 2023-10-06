@@ -1,40 +1,32 @@
 var options = {
   series: [{
-    name: 'PRODUCT A',
-    data: [1, 5, 5, 4, 3]
+    name: 'Факт',
+    data: [1500, 5445, 5241, 6267]
   }, {
-    name: 'PRODUCT B',
-
-    data: [4, 6, 3, 4, 6]
-  }],
+    name: 'Факт1',
+    data: [4440, 5875, 5541, 6447]
+  }, {
+    name: 'Факт1',
+    data: [5644, 3355, 4641, 5567]
+  }
+  ],
   chart: {
     type: 'bar',
-    height: 250,
-    stacked: false,
-  },
-  plotOptions: {
-    bar: {
-      horizontal: true
-    }
-  },
 
-  responsive: [{
-    breakpoint: 480,
-    options: {
-      legend: {
-        position: 'bottom',
-        offsetX: -10,
-        offsetY: 0
-      }
-    }
-  }],
-  xaxis: {
-    categories: ["Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие"],
   },
+  stroke: {
+    colors: ['transparent'],
+    width: 15,
+
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  colors: ['#fb3f43', '#90c06c', '#2b9fdb'],
   grid: {
     show: true,
     borderColor: '#90A4AE',
-    strokeDashArray: 4,
+    strokeDashArray: 3,
     position: 'back',
     xaxis: {
       lines: {
@@ -47,24 +39,21 @@ var options = {
       }
     },
   },
-  dataLabels: {
-    enabled: false,
-  },
-
   yaxis: {
     show: true,
     min: 0,
-    max: 10,
+    max: 8000,
     decimalsInFloat: undefined,
+    tickAmount: 8
+  },
+  xaxis: {
+    categories: ['Отель 1', 'Отель 2', 'Отель 3', 'Отель 4'
+    ],
+
   },
 
-  colors: ['#fb4143', '#f9c654'],
-
-  legend: {
-    show: false,
-  },
-};
-
+}
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
+
 chart.render();
