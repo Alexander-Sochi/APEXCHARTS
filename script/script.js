@@ -1,8 +1,9 @@
 const data = [{
   title: "Поступление",
   value: 9999999,
-  hederTextBottom: 'План',
-  hederTextTop: 'Факт'
+  hederTextTop: 'Факт',//данные для верхнего ключа 
+  hederTextBottom: 'план',//данные для нижнего ключа  
+
 }];
 
 
@@ -22,41 +23,49 @@ function chart() {
     "borderTopLeftRadius": "5px",
     "borderTopRightRadius": "5px",
     "height": "40px",
-    "margin": "95px auto",
     "background": "#babbbd",
     "paddingLeft": "15px",
-    "paddingTop": "5px",
+    "display":"flex",
+    "alignItems": "center",
     "fontSize": "25px"
-  }).appendTo(element);
-
-let textMeaningBootom = $('<div>').css({
-    "fontSize": "16px",
-    "display": "flex",
-      "flexDirection": "row",
-      "justifyContent": "space-evenly",
-      "margin-top":"-60px"
-
-  }).appendTo(element);
-
-  let txtKeyBootom = $('<div>').css({
-    "fontSize": "16px"
-  }).appendTo(textMeaningBootom);
-
-  let textMeaningTop = $('<div>').css({
-  
-    "fontSize": "16px",
-    "display": "flex",
-      "flexDirection": "row",
-      "justifyContent": "space-evenly",
-      "margin-top":"30px"
-  
     
-  }).appendTo(element); // Заглавня 
+  }).appendTo(element);//Создаем header 
+
+
+  let containerTop = $('<div>').css({
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "space-evenly",
+    "margin": "30px 1px 30px 0px",
+  }).appendTo(element); // контейнер див для верхнего ключ значения поля
 
   let txtKeyTop = $('<div>').css({
-    "fontSize": "16px"
-  }).appendTo(textMeaningTop);
 
+    "display":"flex",
+    "alignItems": "center"
+
+  }).appendTo(containerTop);//Ключ для верхнего поля
+
+  let textMeaningTop = $('<div>').css({
+      "fontSize":'30px'
+  }).appendTo(containerTop);//Значение для верхнего поля
+
+  let containerBottom = $('<div>').css({
+    "display": "flex",
+    "flexDirection": "row",
+    "justifyContent": "space-evenly",
+
+  }).appendTo(element);//Контейнер див для  нижнего ключ значение 
+
+  let txtKeyBootom = $('<div>').css({
+    "display":"flex",
+    "alignItems": "center"
+    
+  }).appendTo(containerBottom);//Ключ для нижнего поля 
+
+  let  textMeaningBootom = $('<div>').css({
+    "fontSize":'30px'
+  }).appendTo(containerBottom);// Значение для нижнего поля
 
 
   $('<span>').text(data[0].title).appendTo(wrapper);
@@ -66,11 +75,8 @@ let textMeaningBootom = $('<div>').css({
 
   $('<span>').text(data[0].value).appendTo(textMeaningBootom);
   $('<span>').text(data[0].hederTextBottom).appendTo(txtKeyBootom);
-  
-
 
 }
-
 chart()
 
 
