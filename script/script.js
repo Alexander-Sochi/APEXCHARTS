@@ -38,6 +38,12 @@ var options = {
         show: true
       }
     },
+    padding: {
+      top: 10,
+      right: 100,
+      bottom: 100,
+      left:10
+  },  
   },
   yaxis: {
     show: true,
