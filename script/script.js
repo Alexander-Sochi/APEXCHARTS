@@ -197,7 +197,7 @@ var options = {
         ]
     }
 ],
-
+colors:['#2f9bd0'],
 chart: {
   height: 250,
   type: 'bar',
@@ -232,13 +232,10 @@ grid: {
 
  
 },
-xaxis: {
-
-  categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Bananas',
-    'Blackberries', 'Pears', 'Watermelons', 'Cherries', 'Pomegranates', 'Tangerines', 'Papayas'
-  ],
-  tickPlacement: 'on'
+legend:{
+  show:false
 },
+
 
 };
 
