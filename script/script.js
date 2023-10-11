@@ -1,20 +1,31 @@
 var options = {
-    series: [{
-    name: 'PRODUCT A',
-    data: [44, 55, 41, 67, 22, 43, 21, 49]
+  series: [{
+
+    name: 'Servings',
+    data: [1, 5, 5, 4, 3,4, 6, 3, 4, 6]
   }, {
-    name: 'PRODUCT B',
-    data: [13, 23, 20, 8, 13, 27, 33, 12]
-  }, {
-    name: 'PRODUCT C',
-    data: [11, 17, 15, 15, 21, 14, 15, 13]
+    name: 'Servings',
+
+    data: [4, 6, 3, 4, 6,1, 5, 5, 4, 3,]
   }],
-    chart: {
+  chart: {
+    width: "100%",
     type: 'bar',
     height: 350,
-    stacked: true,
-    stackType: '100%'
   },
+ 
+  plotOptions: {
+    bar: {
+      horizontal: true,
+    },
+   
+  },
+  stroke: {
+    colors: ['transparent'],
+    width: 3,
+
+  },
+ 
   responsive: [{
     breakpoint: 480,
     options: {
@@ -26,19 +37,54 @@ var options = {
     }
   }],
   xaxis: {
-    categories: ['2011 Q1', '2011 Q2', '2011 Q3', '2011 Q4', '2012 Q1', '2012 Q2',
-      '2012 Q3', '2012 Q4'
-    ],
+    categories: ["Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие","Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие",],
+  
+    labels: {
+      formatter: function (value) {
+        console.log(value)
+        return value.toFixed(2);
+      },
+  
+    }
   },
-  fill: {
-    opacity: 1
-  },
-  legend: {
-    position: 'right',
-    offsetX: 0,
-    offsetY: 50
-  },
-  };
+  grid: {
+    show: true,
+    borderColor: '#90A4AE',
+    strokeDashArray: 3,
+    position: 'back',
+  
+    xaxis: {
+      lines: {
+        show: true
+      }
+    },
+    yaxis: {
+      lines: {
+        show: true
+      }
+    },
 
-  var chart = new ApexCharts(document.querySelector("#chart"), options);
-  chart.render();
+  },
+  dataLabels: {
+    enabled: false,
+    
+  },
+
+  colors: ['#fb4143', '#f9c654'],
+
+  legend: {
+    show: true,
+    position: 'bottom',
+    horizontalAlign: 'left', 
+  },
+  yaxis: {
+    reversed: true,
+  },
+
+        
+}
+
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
+
