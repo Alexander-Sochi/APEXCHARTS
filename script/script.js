@@ -41,8 +41,9 @@ var options = {
   
     labels: {
       formatter: function (value) {
-        console.log(value)
-        return value.toFixed(2);
+        if(typeof myVar !== "string"){
+          return value.toFixed(2);
+       } 
       },
   
     }
