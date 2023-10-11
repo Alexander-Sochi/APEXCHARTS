@@ -1,27 +1,205 @@
 var options = {
-  series: [{
-  name: 'Servings',
-  // data: [2,3,4,6,7,8,4,2,6,4,3],
-  // data: [1,7,8,6,4,3,5,3,6,3,6],
-  data: [3,2,4,5,6,7,3,3,5,6,7]
-},{
-
-name: 'Servings',
-data: [2,3,4,6,7,8,4,2,6,4,3],
-
-},
-{
-
- name: 'Servings',
-   data: [1,7,8,6,4,3,5,3,6,3,6],
-
-  }
-
-
+  "series": [
+    {
+        name: "Bar",
+        data: [
+            {
+                x: "Jan",
+                y: 3.75
+            },
+            {
+                x: "Feb",
+                y: 3
+            },
+            {
+                x: "Mar",
+                y: 6.3
+            },
+            {
+                x: "Apr",
+                y: 1.3
+            },
+            {
+                x: "Mai",
+                y: 3.4
+            },
+            {
+                x: "jun",
+                y: 3
+            },
+            {
+                x: "Aug",
+                y: 2.3
+            },
+            {
+                x: "Sep",
+                y: 3.3
+            },
+            {
+                x: "Oct",
+                y: 1.3
+            },
+            {
+                x: "Nov",
+                y: 2
+            },
+            {
+                x: "Dec",
+                y: 0
+            }
+        ]
+    },
+    {
+        "name": "series-2",
+        "data": [
+            {
+                "x": "Jan",
+                "y": "3"
+            },
+            {
+                "x": "Feb",
+                "y": "5"
+            },
+            {
+                "x": "Mar",
+                "y": "2.3"
+            },
+            {
+                "x": "Apr",
+                "y": "4.4"
+            },
+            {
+                "x": "Mai",
+                "y": "1.7"
+            },
+            {
+                "x": "jun",
+                "y": "4.4"
+            },
+            {
+                "x": "Aug",
+                "y": "4.5"
+            },
+            {
+                "x": "Sep",
+                "y": "1.3"
+            },
+            {
+                "x": "Oct",
+                "y": "4.4"
+            },
+            {
+                "x": "Nov",
+                "y": "0"
+            },
+            {
+                "x": "Dec",
+                "y": "0"
+            }
+        ]
+    },
+    {
+        "name": "series-3",
+        "data": [
+            {
+                "x": "Jan",
+                "y": "1.6"
+            },
+            {
+                "x": "Feb",
+                "y": "4"
+            },
+            {
+                "x": "Mar",
+                "y": "4.3"
+            },
+            {
+                "x": "Apr",
+                "y": "1.9"
+            },
+            {
+                "x": "Mai",
+                "y": "8"
+            },
+            {
+                "x": "jun",
+                "y": "4.5"
+            },
+            {
+                "x": "Aug",
+                "y": "8.4"
+            },
+            {
+                "x": "Sep",
+                "y": "3.4"
+            },
+            {
+                "x": "Oct",
+                "y": "3.4"
+            },
+            {
+                "x": "Nov",
+                "y": "0"
+            },
+            {
+                "x": "Dec",
+                "y": "0"
+            }
+        ]
+    },
+    {
+        "name": "series-4",
+        "data": [
+            {
+                "x": "Jan",
+                "y": null
+            },
+            {
+                "x": "Feb",
+                "y": "3"
+            },
+            {
+                "x": "Mar",
+                "y": "0"
+            },
+            {
+                "x": "Apr",
+                "y": "5.4"
+            },
+            {
+                "x": "Mai",
+                "y": "3"
+            },
+            {
+                "x": "jun",
+                "y": "6.3"
+            },
+            {
+                "x": "Aug",
+                "y": "8.6"
+            },
+            {
+                "x": "Sep",
+                "y": "7.5"
+            },
+            {
+                "x": "Oct",
+                "y": "0"
+            },
+            {
+                "x": "Nov",
+                "y": "0"
+            },
+            {
+                "x": "Dec",
+                "y": "0"
+            }
+        ]
+    }
 ],
 
 chart: {
-  height: 350,
+  height: 250,
   type: 'bar',
 },
 plotOptions: {
@@ -35,9 +213,24 @@ dataLabels: {
 
 
 grid: {
-  row: {
-    colors: ['#fff', '#f2f2f2']
-  }
+  show: true,
+  borderColor: '#90A4AE',
+  strokeDashArray: 3,
+  position: 'back',
+ 
+  xaxis: {
+    lines: {
+      show: true
+    }
+  },
+  yaxis: {
+    lines: {
+      show: true
+    },
+ 
+  },
+
+ 
 },
 xaxis: {
 
@@ -46,7 +239,6 @@ xaxis: {
   ],
   tickPlacement: 'on'
 },
-
 
 };
 
