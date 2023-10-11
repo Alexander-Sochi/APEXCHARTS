@@ -1,89 +1,54 @@
 var options = {
   series: [{
+  name: 'Servings',
+  // data: [2,3,4,6,7,8,4,2,6,4,3],
+  // data: [1,7,8,6,4,3,5,3,6,3,6],
+  data: [3,2,4,5,6,7,3,3,5,6,7]
+},{
 
-    name: 'Servings',
-    data: [1, 5, 5, 4, 3,4, 6, 3, 4, 6]
-  }, {
-    name: 'Servings',
+name: 'Servings',
+data: [2,3,4,6,7,8,4,2,6,4,3],
 
-    data: [4, 6, 3, 4, 6,1, 5, 5, 4, 3,]
-  }],
-  chart: {
-    width: "100%",
-    type: 'bar',
-    height: 350,
-  },
- 
-  plotOptions: {
-    bar: {
-      horizontal: true,
-    },
-   
-  },
-  stroke: {
-    colors: ['transparent'],
-    width: 3,
+},
+{
 
-  },
- 
-  responsive: [{
-    breakpoint: 480,
-    options: {
-      legend: {
-        position: 'bottom',
-        offsetX: -10,
-        offsetY: 0
-      }
-    }
-  }],
-  xaxis: {
-    categories: ["Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие","Проживание", "F & B", "SPA & Фитнес", "Парковка", "Прочие",],
-  
-    labels: {
-      formatter: function (value) {
-        console.log(value)
-        return value.toFixed(2);
-      },
-  
-    }
-  },
-  grid: {
-    show: true,
-    borderColor: '#90A4AE',
-    strokeDashArray: 3,
-    position: 'back',
-  
-    xaxis: {
-      lines: {
-        show: true
-      }
-    },
-    yaxis: {
-      lines: {
-        show: true
-      }
-    },
+ name: 'Servings',
+   data: [1,7,8,6,4,3,5,3,6,3,6],
 
-  },
-  dataLabels: {
-    enabled: false,
-    
-  },
+  }
 
-  colors: ['#fb4143', '#f9c654'],
 
-  legend: {
-    show: true,
-    position: 'bottom',
-    horizontalAlign: 'left', 
-  },
-  yaxis: {
-    reversed: true,
-  },
+],
 
-        
-}
+chart: {
+  height: 350,
+  type: 'bar',
+},
+plotOptions: {
+  bar: {
+    columnWidth: '50%',
+  }
+},
+dataLabels: {
+  enabled: false
+},
 
+
+grid: {
+  row: {
+    colors: ['#fff', '#f2f2f2']
+  }
+},
+xaxis: {
+
+  categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Bananas',
+    'Blackberries', 'Pears', 'Watermelons', 'Cherries', 'Pomegranates', 'Tangerines', 'Papayas'
+  ],
+  tickPlacement: 'on'
+},
+
+
+};
 
 var chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();
